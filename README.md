@@ -234,4 +234,5 @@ stream.on('direct_message', function(data) {
 主にこれらがメインです。
 
 [http://qiita.com/nakahashi/items/9566f9cd31e0160aeac2](http://qiita.com/nakahashi/items/9566f9cd31e0160aeac2)
+
 [https://www.botwiki.org/tutorials/making-what_capital/](https://www.botwiki.org/tutorials/making-what_capital/)
