@@ -43,10 +43,10 @@ stream.on('direct_message', function(data) {
 var fs = require('fs'),
     path = require('path'),
     list_of_nihongo = require(path.join(__dirname, 'list_of_nihongo.js'));
-//自分のツイートに対して、追いかけない    
-var public_stream = twitter.stream('statuses/filter', 
+//自分のツイートに対して、追いかけない
+var public_stream = twitter.stream('statuses/filter',
   {
-    track: '@Kusobottest'
+    track: '@自分のアカウント名'
   }
 );
 //起動時にメッセージを送信
@@ -65,7 +65,7 @@ twitter.post('statuses/update', {
 );
 
 //ツイートを受け取る
-public_stream.on('tweet', 
+public_stream.on('tweet',
   function (tweet) {
     console.log('Received new answer!');
     console.log(tweet.text);
@@ -79,7 +79,7 @@ public_stream.on('tweet',
       console.log(tweet.text);
     }
     if (tweet_response.length > 0){
-      twitter.post('statuses/update', 
+      twitter.post('statuses/update',
         {
           in_reply_to_status_id: tweet.id_str,
           status: tweet_response
